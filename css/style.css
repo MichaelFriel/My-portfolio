@@ -97,7 +97,6 @@ header h1 {
   position: absolute;
   left: 0;
   top: 0;
- 
   z-index: -1;
 }
 
@@ -133,6 +132,10 @@ header h1 {
 
 }
 
+.page-wrapper {
+  width: 95%;
+}
+
 .page-section {
   display: flex;
   align-items: center;
@@ -147,6 +150,8 @@ width: 30%;
 text-align: right;
 font-size: 30px;
 color: var(--primary-colour);
+position: sticky;
+top: 30vh;
 
 }
 
@@ -154,30 +159,73 @@ color: var(--primary-colour);
  flex: 1;
  padding-left: 20px;
  border-left: 5px solid var(--primary-colour);
- color: var(--primary-colour);
+ color: var(--primary-colour); 
+}
+ 
+ 
+.work-tiles {
+ display: grid;
+ grid-template-rows: repeat(2fr, 1fr);
+ grid-template-columns: repeat(2fr, 1fr);
+ grid-template-areas:
+ "one one"
+ "one one"
+ "two three"
+ "four five";
+ gap: 20px;
+ border-left: 5px solid var(--primary-colour);
+ padding-left: 20px;
+}
+
+.image-container.one {
+  grid-area: one;
+  }
+  
+.image-container.two {
+  grid-area: two;
+  }
+
+.image-container.three {
+  grid-area: three;
+  }
+
+.image-container.four {
+grid-area: four;
+}
+
+.image-container.five {
+  grid-area: five;
 }
 
 .image-container {
   position: relative;
   width: 100%;
-  height: auto;
-  border-left: 5px solid var(--primary-colour);
-  padding: 30px;
+  display: inline-block;
+  overflow: hidden;
 }
 
 .image-container img {
   width: 100%; /* Adjust as needed */
   height: auto; /* Maintain aspect ratio */
-  
+  border: 10px solid var(--secondary-colour);
+  object-fit: cover;
 }
+
 
 .overlay-text {
   position: absolute; /* Absolute position relative to its parent */
-  top: 0; /* Align to top */
+  bottom: 40px; /* Align to bottom */
   left: 0; /* Align to left */
-  color: white; /* Adjust text color as needed */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+  color: var(--tertiary-colour); /* Adjust text color as needed */
+  background-color: var(--secondary-colour);
   padding: 10px; /* Padding around text */
-  max-width: 50%; /* Limit the width of the overlay text */
+  min-width: 30%;
+  max-width: 60%; /* Limit the width of the overlay text */
+}
 
+.overlay-text p {
+  color: var(--tertiary-colour);
+  font-size: 16px;
+  border: none;
+  padding: 0px;
 }
