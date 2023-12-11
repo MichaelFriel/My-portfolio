@@ -211,6 +211,16 @@ grid-area: four;
   object-fit: cover;
 }
 
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0.1; /* Overlay is barely visible by default */
+  transition: opacity 0.5s;
+}
 
 .overlay-text {
   position: absolute; /* Absolute position relative to its parent */
@@ -228,4 +238,8 @@ grid-area: four;
   font-size: 16px;
   border: none;
   padding: 0px;
+}
+
+.image-container:hover .image-overlay {
+ opacity: 1;
 }
