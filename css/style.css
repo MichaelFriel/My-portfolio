@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-:root {
+:root { /*Setting three common colours*/
 --primary-colour: #336699;
 --secondary-colour: #ADD2C2;
 --tertiary-colour: rgb(62, 59, 59);
@@ -39,7 +39,7 @@ header {
   background-color: var(--tertiary-colour);
   color: var(--tertiary-colour);
   height: 15vh;
-  display: flex;
+  display: flex; /*Moving h1 to left and nav to right*/
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
@@ -48,32 +48,27 @@ header {
 
 nav ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: row; /*Navigation items in a row rather than column*/
   align-items: center;
   justify-content: right;
-  gap: 40px;
+  gap: 40px; /* Sufficient space between items */
   font-size: 25px;
   text-decoration: underline;
   color: var(--secondary-colour);
-  list-style-type: none;
+  list-style-type: none; /* Removing bullet points from list */
   margin-right: 30px;
 }
 
 a {
-  color: inherit;
+  color: inherit; /*Overwriting standard link colours */
 }
 
 li a:hover {
-  text-decoration: none;
-  color: orange;
-}
-
-a:active {
+  text-decoration: none; /*Removing underline from standard link style */
   color: var(--primary-colour);
-  text-decoration: dashed;
 }
 
-header h1 {
+header h1 { /*Aligning the h1 to the left and styling accordingly*/
   background-color: var(--secondary-colour);
   padding-left: 60px;
   padding-right: 10px;
@@ -87,12 +82,12 @@ header h1 {
 .hero-banner {
   
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center; 
   justify-content: space-between; /* Space between the profile image and hero text */
-  width: 100%;
+  width: 100%; 
   height: 70vh; /* 70% viewport height */
   position: relative; 
-  overflow: hidden;
+  overflow: hidden; /*Stops the image going over the edge of the container*/
   margin-bottom: 10px;
 }
 
@@ -100,34 +95,42 @@ header h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
+  position: absolute; /*Image is absolutely positioned, based on the relative position of the hero banner.*/
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: -1; /*Hero image sits behind text and profile image*/
 }
 
 .profile-image {
-  border-radius: 50%;
+  border-radius: 50%; /*Rounded edges*/
   width: 40%;
   height: auto;
-  margin-left: -30px;
-  z-index: 3;
+  margin-left: -30px; /*Moved profile image slightly off the page*/
+  z-index: 3; /*Sits above the hero image and also the hero overlay*/
   align-self: left;
-  margin-top:13%;
+  margin-top: 15%; /*Overhang the bottom of the hero sligtly*/
 }
 
 .hero-text {
   margin: 50px;
-  z-index: 10;
+  z-index: 10; /*Ensures it can never be covered up*/
   text-align: right;
   color: var(--tertiary-colour);
   background: var(--secondary-colour);
   justify-content: right;
   padding: 40px;
-  align-self: flex-end;
+  align-self: flex-end; /*Moved it to the bottom*/
 }
 
-.hero-banner::before {
+.hero-text h2 {
+  font-size: 30px;
+}
+
+.hero-text p {
+  font-size: 20px;
+}
+
+.hero-banner::before { /*Added a partially transparent overlay to the hero*/
   content: "";
   position: absolute;
   top: 0;
@@ -136,7 +139,10 @@ header h1 {
   height: 100%;
   background-color: rgba(51, 102, 153, 0.4); 
   z-index: 1; 
+}
 
+.primary {
+  color: var(--primary-colour);
 }
 
 /*Hero Section End */
@@ -144,11 +150,11 @@ header h1 {
 /* Main Section Start */
 
 .page-wrapper {
-  width: 95%;
+  width: 95%; /*Slightly reduced width of page wrapper, to add natural margin*/
 }
 
 .page-section {
-  display: flex;
+  display: flex; /* Flex for title to be on left and content to be on right */
   align-items: center;
   margin-bottom: 20px;
   padding: 10px;
@@ -156,29 +162,29 @@ header h1 {
 }
 
 .section-title {
-flex: 0 0 auto;
-width: 30%;
+flex: 0 0 auto; /*Preveting title from expanding */
+width: 25%; /*Title section takes up one quarter of the page wrapper*/
 text-align: right;
 font-size: 30px;
 color: var(--primary-colour);
-position: sticky;
-top: 30vh;
+position: sticky; /* Section title is sticky */
+top: 30vh; /* Section title moves at 30% of the screen height */
 
 }
 
 .page-section p {
- flex: 1;
+ flex: 1; /*Flex grow used to change the width depending on screen size*/
  padding-left: 20px;
  border-left: 5px solid var(--primary-colour);
  color: var(--primary-colour); 
 }
  
  
-.work-tiles {
+.work-tiles { /*Class added to create grid for work content*/
  display: grid;
  grid-template-rows: repeat(2fr, 1fr);
  grid-template-columns: repeat(2fr, 1fr);
- grid-template-areas:
+ grid-template-areas: /*First item is twice the size of the others*/
  "one one"
  "one one"
  "two three"
@@ -187,7 +193,7 @@ top: 30vh;
  border-left: 5px solid var(--primary-colour);
  padding-left: 20px;
 }
-
+/*Grid Areas*/
 .image-container.one {
   grid-area: one;
   }
@@ -216,32 +222,32 @@ grid-area: four;
 }
 
 .image-container img {
-  width: 100%; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; 
+  height: auto; 
   border: 10px solid var(--secondary-colour);
   object-fit: cover;
 }
 
-.image-overlay {
+.image-overlay { /*Added a light opacity when hovering over the item*/
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.7);
-  opacity: 0.1; /* Overlay is barely visible by default */
+  opacity: 0.1; /* Barely visibile initially, uses .image-container:hover class lower down CSS file */
   transition: opacity 0.5s;
 }
 
 .overlay-text {
   position: absolute; /* Absolute position relative to its parent */
-  bottom: 40px; /* Align to bottom */
-  left: 0; /* Align to left */
-  color: var(--tertiary-colour); /* Adjust text color as needed */
+  bottom: 40px; 
+  left: 0; 
+  color: var(--tertiary-colour); 
   background-color: var(--secondary-colour);
-  padding: 10px; /* Padding around text */
-  min-width: 30%;
-  max-width: 60%; /* Limit the width of the overlay text */
+  padding: 10px; 
+  min-width: 30%; /*Overlay box is at least 30% of image container, irrespective of content */
+  max-width: 60%; /*Max width is limited to 60% of container*/
 }
 
 .overlay-text p {
@@ -251,7 +257,7 @@ grid-area: four;
   padding: 0px;
 }
 
-.image-container:hover .image-overlay {
+.image-container:hover .image-overlay { /*On hover, opacity of image overlay goes from 0.1 to 1*/
  opacity: 1;
 }
 
@@ -277,7 +283,7 @@ ul {
 
 /* Responsive Media */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 960px) {
   /* Styles for tablet portrait mode */
   
   header {
@@ -287,7 +293,7 @@ ul {
 
   header h1 {
     width: 100%;
-    padding: 10px 0; /* Adjust padding as needed */
+    padding: 10px 0; 
     text-align: center;
   }
 
@@ -296,11 +302,9 @@ ul {
     height: 8vh;
     width: 100%;
     background-color: var(--tertiary-colour);
-    z-index: 4;
+    z-index: 4; /*Sits higher than hero image in case of any overlap*/
     align-items: center;
     justify-content: space-evenly;
-    
-
   }
 
   nav ul {
@@ -318,7 +322,7 @@ ul {
   }
 
   .profile-image {
-    display: none; /* Hide the profile image */
+    display: none; /* Hides the profile image */
   }
 
   .hero-text {
@@ -327,16 +331,17 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%); /* Center the hero text */
     text-align: center;
-    margin: 0; /* Remove margin */
-    padding: 20px; /* Add padding as needed */
+    margin: 0; 
+    padding: 20px; 
   }
 
   .hero-banner::before {
-    background-color: rgba(51, 102, 153, 0.6); /* Adjust overlay for readability */
+    background-color: rgba(51, 102, 153, 0.6); /* Overlay  */
   }
+
 }
 
-@media screen and (max-width: 648px) {
+@media screen and (max-width: 748px) {
 
 
 .page-section {
@@ -346,20 +351,21 @@ ul {
 
 .section-title {
   width: 100%; /* Title to be full width */
-  text-align: center; /* title to be center aligned */
+  text-align: center; /* title center aligned */
   position: relative; 
   top: auto; 
-  margin-bottom: 20px; /* Add some space between the title and content */
+  margin-bottom: 20px; 
 }
 
 .page-section p {
   padding-left: 0; /* Remove left padding */
   border-left: none; /* Remove left border */
   color: var(--primary-colour);
+  margin: 20px;
 }
 
 .work-tiles {
-  grid-template-columns: 1fr; /* single column structure */
+  grid-template-columns: 1fr; /* single column structure instead of 2 */
   grid-template-rows: 5; /* five rows */
   grid-template-areas: 
   "one"
@@ -372,4 +378,5 @@ ul {
 .image-container {
   width: 100%; /* Images to be full width on mobile */
 }
+
 }
