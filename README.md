@@ -20,3 +20,19 @@ This screenshot shows the hover state for completed projects.
 
 ![Header area displayed as a column in tablet view](images/Hero-tablet-view.png)
 This screenshot shows the header area displayed as a column when in tablet view.
+
+## Installation
+
+To review the portfolio, please follow this URL: https://michaelfriel.github.io/My-portfolio/
+
+The code is available to be cloned from the My-Portfolio repository, using git commands. To access this, please follow this URL: https://github.com/MichaelFriel/My-portfolio
+
+## Usage
+
+The usage is very typical of an ordinary webpage, with a few nuances listed below:
+* Navigation can be used to scroll through the page.
+* To review tablet media sizes, please reduce screen width to 960px.
+* To review mobile media sizes, please reduce screen width to 748px.
+
+## License
+Please see Mit License contained within repository.
