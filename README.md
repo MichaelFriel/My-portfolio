@@ -12,11 +12,11 @@ This webpage is intended for use as a portfolio for my previous and upcoming wor
   * The 2 projects link to appropriate destinations, but the 3 pending projects have had their links disabled and are listed as 'Coming Soon'.
   * There is an image overlay displayed on hover for the two completed projects, in order to indicate that they have a suitable link.
 
-![Main Hero area of Michael's Portfolio](image.png)
+![Main Hero area of Michael's Portfolio](images/Hero-desktop-view.png)
 This screenshot shows the main hero section of the portfolio.
 
-![Screenshot showing the hover state of completed project tiles](image-1.png)
+![Screenshot showing the hover state of completed project tiles](images/Work-hover-state.png)
 This screenshot shows the hover state for completed projects.
 
-![Header area displayed as a column in tablet view](image-2.png)
+![Header area displayed as a column in tablet view](images/Hero-tablet-view.png)
 This screenshot shows the header area displayed as a column when in tablet view.
